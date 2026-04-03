@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Funcao que recebe o array e seu tamanho, retornando a multiplicacao dos valores
+float multiplicaArray(float arr[], int tamanho) {
+    float produto = 1.0; // Inicia em 1 para a multiplicacao
+    
+    for(int i = 0; i < tamanho; i++) {
+        produto = produto * arr[i];
+    }
+    
+    return produto;
+}
+
+int main() {
+    int tamanho;
+    
+    cout << "Quantos valores voce deseja inserir? ";
+    cin >> tamanho;
+    
+    // Criando o array com o tamanho informado pelo usuario
+    float arr[tamanho]; 
+    
+    // ler os valores e guardar no array
+    for(int i = 0; i < tamanho; i++) {
+        cout << "Digite o valor " << i + 1 << ": ";
+        cin >> arr[i];
+    }
+    
+    float resultado = multiplicaArray(arr, tamanho);
+    cout << "O resultado da multiplicacao e: " << resultado << endl;
+    
+    return 0;
+}
