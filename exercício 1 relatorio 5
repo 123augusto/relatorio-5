@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Funcao recursiva de Fibonacci
+int fibonacci(int n) {
+    if (n == 0) return 0; // Ponto de parada 1
+    if (n == 1) return 1; // Ponto de parada 2
+    
+    // Chamada recursiva
+    return fibonacci(n - 1) + fibonacci(n - 2); 
+}
+
+int main() {
+    int n;
+    
+    cout << "Digite um numero n: ";
+    cin >> n; 
+    // Exibe 
+    cout << "O resultado de fibonacci(" << n << ") e: " << fibonacci(n) << endl;
+    
+    return 0;
+}
