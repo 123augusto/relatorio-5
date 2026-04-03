@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    float saldo;
+    int opcao = 0;
+    float valor;
+
+    
+    cout << "Informe o saldo inicial da conta (ex: 1000): ";
+    cin >> saldo;
+
+    // Loop iterativo que mantem o menu rodando ate o usuario escolher sair
+    while (true) {
+        cout << "\n--- Menu de Opcoes ---" << endl;
+        cout << "1. Ver Saldo" << endl;
+        cout << "2. Depositar" << endl;
+        cout << "3. Sacar" << endl;
+        cout << "4. Sair" << endl;
+        cout << "Escolha uma opcao: ";
+        cin >> opcao;
+
+        if (opcao == 1) {
+            cout << "Saldo atual: R$ " << saldo << endl;
+            
+        } else if (opcao == 2) {
+            cout << "Digite o valor para deposito: ";
+            cin >> valor;
+            saldo = saldo + valor; // Adiciona ao saldo
+            cout << "Deposito realizado com sucesso!" << endl;
+            
+        } else if (opcao == 3) {
+            cout << "Digite o valor para saque: ";
+            cin >> valor;
+            
+            // Logica de Saque: verifica se tem saldo suficiente
+            if (valor > saldo) {
+                cout << "Saldo Insuficiente!" << endl;
+            } else {
+                saldo = saldo - valor; // Subtrai do saldo
+                cout << "Saque realizado com sucesso!" << endl;
+            }
+            
+        } else if (opcao == 4) {
+            cout << "Saindo do sistema bancario..." << endl;
+            break; // Sai do loop e encerra o programa
+            
+        } else {
+            cout << "Opcao invalida. Tente novamente." << endl;
+        }
+    }
+
+    return 0;
+}
